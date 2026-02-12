@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/2DEngine.dir/src/main.cpp.o -o 2DEngine  -Wl,-rpath,"/home/nkoper/Рабочий стол/Projects/C++_shit/2DEngine/build/_deps/sfml-build/lib" _deps/sfml-build/lib/libsfml-graphics.so.2.6.2 _deps/sfml-build/lib/libsfml-window.so.2.6.2 _deps/sfml-build/lib/libsfml-system.so.2.6.2 
