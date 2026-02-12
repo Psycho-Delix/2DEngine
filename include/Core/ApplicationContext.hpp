@@ -12,7 +12,7 @@ public:
 
     void addEntity(Entity* entity) {
         _entities.push_back(entity);
-        std::cout << entity->name() << " добавлен.";
+        std::cout << entity->name() << " добавлен.\nПозиция: (" << entity->position.x << ", " << entity->position.y << ")";
     }
     
 private:
