@@ -28,9 +28,13 @@ private:
 
 int main() {
 
+    std::cout << "\n";
+
     ApplicationContext context;
     
     Card c("Ace", "Spades");
+
+    c.position = {50, 50};
 
     context.addEntity(&c);
 

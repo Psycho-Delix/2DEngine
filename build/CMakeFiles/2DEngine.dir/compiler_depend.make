@@ -4,6 +4,7 @@
 CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/nkoper/Рабочий\ стол/Projects/C++_shit/2DEngine/src/main.cpp \
   /home/nkoper/Рабочий\ стол/Projects/C++_shit/2DEngine/include/Core/ApplicationContext.hpp \
   /home/nkoper/Рабочий\ стол/Projects/C++_shit/2DEngine/include/Core/Constants.hpp \
+  /home/nkoper/Рабочий\ стол/Projects/C++_shit/2DEngine/include/Core/Types.hpp \
   /home/nkoper/Рабочий\ стол/Projects/C++_shit/2DEngine/include/Engine/Entity.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -291,9 +292,7 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/nkoper/Рабочий\ стол/Pr
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
 /usr/include/c++/13/bits/stl_algobase.h:
 
@@ -304,8 +303,6 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/nkoper/Рабочий\ стол/Pr
 /usr/include/c++/13/debug/debug.h:
 
 /usr/include/c++/13/stdexcept:
-
-/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
@@ -327,6 +324,20 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/nkoper/Рабочий\ стол/Pr
 
 /usr/include/c++/13/bits/char_traits.h:
 
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
+
+/usr/include/c++/13/bits/ios_base.h:
+
+/usr/include/c++/13/bits/move.h:
+
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+
+/usr/include/c++/13/type_traits:
+
+/usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/usr/include/c++/13/bits/basic_ios.h:
+
 /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
 
 /usr/include/c++/13/bits/basic_ios.tcc:
@@ -336,16 +347,6 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/nkoper/Рабочий\ стол/Pr
 /usr/include/c++/13/bits/memory_resource.h:
 
 /usr/include/wchar.h:
-
-/usr/include/x86_64-linux-gnu/bits/time64.h:
-
-/usr/include/c++/13/bits/basic_ios.h:
-
-/usr/include/c++/13/bits/move.h:
-
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
-
-/usr/include/c++/13/type_traits:
 
 /usr/include/alloca.h:
 
@@ -369,8 +370,6 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/nkoper/Рабочий\ стол/Pr
 
 /usr/include/c++/13/bits/hash_bytes.h:
 
-/usr/include/c++/13/string:
-
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
@@ -390,14 +389,6 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/nkoper/Рабочий\ стол/Pr
 /usr/include/c++/13/backward/binders.h:
 
 /usr/include/c++/13/bits/stringfwd.h:
-
-/usr/include/c++/13/numbers:
-
-/usr/include/c++/13/bits/ostream.tcc:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
-
-/usr/include/c++/13/bits/ios_base.h:
 
 /usr/include/c++/13/bits/locale_classes.h:
 
@@ -451,6 +442,12 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/nkoper/Рабочий\ стол/Pr
 
 /home/nkoper/Рабочий\ стол/Projects/C++_shit/2DEngine/include/Engine/Entity.hpp:
 
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/home/nkoper/Рабочий\ стол/Projects/C++_shit/2DEngine/include/Core/Types.hpp:
+
 /usr/include/c++/13/bits/istream.tcc:
 
 /usr/include/c++/13/bits/exception_ptr.h:
@@ -469,13 +466,19 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/nkoper/Рабочий\ стол/Pr
 
 /usr/include/c++/13/ext/alloc_traits.h:
 
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+/usr/include/c++/13/ios:
 
-/usr/include/c++/13/bits/stl_iterator.h:
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
 /usr/include/c++/13/bits/functexcept.h:
 
-/usr/include/c++/13/ios:
+/usr/include/c++/13/bits/stl_iterator.h:
+
+/usr/include/c++/13/bits/ostream.tcc:
+
+/usr/include/c++/13/numbers:
+
+/usr/include/c++/13/string:
 
 /usr/include/asm-generic/errno.h:
 

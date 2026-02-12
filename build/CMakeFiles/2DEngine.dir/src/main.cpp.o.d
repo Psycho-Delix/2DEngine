@@ -156,6 +156,7 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
  /home/nkoper/Рабочий\ стол/Projects/C++_shit/2DEngine/include/Engine/Entity.hpp \
+ /home/nkoper/Рабочий\ стол/Projects/C++_shit/2DEngine/include/Core/Types.hpp \
  /home/nkoper/Рабочий\ стол/Projects/C++_shit/2DEngine/include/Core/ApplicationContext.hpp \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
