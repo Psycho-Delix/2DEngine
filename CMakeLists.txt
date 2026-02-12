@@ -16,7 +16,9 @@ FetchContent_MakeAvailable(sfml)
 
 add_executable(2DEngine
     src/main.cpp
+
     src/Core/Types.hpp
+    src/Engine/Entity.hpp
 )
 
 target_include_directories(2DEngine PRIVATE include)
