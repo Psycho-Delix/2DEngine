@@ -9,7 +9,7 @@
 class Card : public Entity
 {
 public:
-    Card(const std::string& rank, const std::string& suit) 
+    Card(std::string_view rank, std::string_view suit) 
     : 
         _rank(rank), 
         _suit(suit)
@@ -17,10 +17,10 @@ public:
     }
 
     void update(float dt) override {
-
+        std::cout << "Обновление состояния Card..\n";
     } 
 
-    std::string name() const override { return "Card"; }
+    std::string_view name() const override { return "Card"; }
 
 private:
     std::string _rank;
@@ -38,6 +38,10 @@ int main() {
     card->position = {50, 50};
 
     context.addEntity(std::move(card));
+
+    while (true) {
+        context.update(DELTA_TIME / FPS);
+    }
 
     return 0;
 }

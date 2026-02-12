@@ -15,6 +15,12 @@ public:
         std::cout << entity->name() << " добавлен.\nПозиция: (" << entity->position.x << ", " << entity->position.y << ")";
         _entities.push_back(std::move(entity));
     }
+
+    void update(float dt) {
+        for (auto& e : _entities) {
+            e->update(dt);
+        }
+    }
     
 private:
     std::vector<std::unique_ptr<Entity>> _entities;
