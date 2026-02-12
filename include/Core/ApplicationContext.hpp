@@ -1,8 +1,9 @@
 #pragma once
 
 #include <vector>
+#include <iostream>
 
-#include "Entity.hpp"
+#include "Engine/Entity.hpp"
 
 class ApplicationContext
 {
@@ -11,6 +12,7 @@ public:
 
     void addEntity(Entity* entity) {
         _entities.push_back(entity);
+        std::cout << entity->name() << " добавлен.";
     }
     
 private:

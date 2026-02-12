@@ -11,17 +11,10 @@ FetchContent_Declare(
     GIT_REPOSITORY https://github.com/SFML/SFML.git
     GIT_TAG 2.6.x
 )
-
 FetchContent_MakeAvailable(sfml)
 
 add_executable(2DEngine
     src/main.cpp
-
-    src/Core/Types.hpp
-    src/Core/Constants.hpp
-    src/Core/ApplicationContext.hpp
-
-    src/Engine/Entity.hpp
 )
 
 target_include_directories(2DEngine PRIVATE include)
