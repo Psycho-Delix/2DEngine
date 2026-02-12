@@ -1,0 +1,14 @@
+# Target labels
+ sfml-populate
+# Source files and their labels
+/home/nkoper/Рабочий стол/Projects/C++_shit/2DEngine/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate
+/home/nkoper/Рабочий стол/Projects/C++_shit/2DEngine/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate.rule
+/home/nkoper/Рабочий стол/Projects/C++_shit/2DEngine/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate-complete.rule
+/home/nkoper/Рабочий стол/Projects/C++_shit/2DEngine/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-build.rule
+/home/nkoper/Рабочий стол/Projects/C++_shit/2DEngine/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure.rule
+/home/nkoper/Рабочий стол/Projects/C++_shit/2DEngine/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-download.rule
+/home/nkoper/Рабочий стол/Projects/C++_shit/2DEngine/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install.rule
+/home/nkoper/Рабочий стол/Projects/C++_shit/2DEngine/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-mkdir.rule
+/home/nkoper/Рабочий стол/Projects/C++_shit/2DEngine/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch.rule
+/home/nkoper/Рабочий стол/Projects/C++_shit/2DEngine/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-test.rule
+/home/nkoper/Рабочий стол/Projects/C++_shit/2DEngine/build/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-update.rule
