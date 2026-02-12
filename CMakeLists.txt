@@ -18,6 +18,8 @@ add_executable(2DEngine
     src/main.cpp
 
     src/Core/Types.hpp
+    src/Core/Constants.hpp
+
     src/Engine/Entity.hpp
 )
 
