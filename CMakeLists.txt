@@ -19,6 +19,7 @@ add_executable(2DEngine
 
     src/Core/Types.hpp
     src/Core/Constants.hpp
+    src/Core/ApplicationContext.hpp
 
     src/Engine/Entity.hpp
 )
