@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <memory>
 
 #include "Engine/Entity.hpp"
 #include "Core/ApplicationContext.hpp"
@@ -32,11 +33,11 @@ int main() {
 
     ApplicationContext context;
     
-    Card c("Ace", "Spades");
+    auto card = std::make_unique<Card>("Ace", "Spades");
 
-    c.position = {50, 50};
+    card->position = {50, 50};
 
-    context.addEntity(&c);
+    context.addEntity(std::move(card));
 
     return 0;
 }
