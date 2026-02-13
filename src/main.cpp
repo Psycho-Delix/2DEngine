@@ -6,6 +6,9 @@
 #include "Core/ApplicationContext.hpp"
 #include "Core/Constants.hpp"
 
+/*
+ * test
+ */
 class Card : public Entity
 {
 public:
@@ -14,10 +17,16 @@ public:
         _rank(rank), 
         _suit(suit)
     {
+        addPhysics();
+        physics()->velocity = {2, 0};
     }
 
     void update(float dt) override {
-        std::cout << "Обновление состояния Card..\n";
+        if (physics()) {
+            physics()->update(dt, transform().position);
+        }
+
+        std::cout << "(" << transform().position.x << ", " << transform().position.y << ")\n";
     } 
 
     std::string_view name() const override { return "Card"; }
@@ -35,12 +44,12 @@ int main() {
     
     auto card = std::make_unique<Card>("Ace", "Spades");
 
-    card->position = {50, 50};
+    card->transform().position = {50, 50};
 
     context.addEntity(std::move(card));
 
     while (true) {
-        context.update(DELTA_TIME / FPS);
+        context.update(DELTA_TIME);
     }
 
     return 0;
