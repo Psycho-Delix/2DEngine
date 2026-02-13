@@ -2,34 +2,43 @@
 
 #include <string_view>
 #include <memory>
+#include <unordered_map>
+#include <typeindex>
 
 #include "Core/Types.hpp"
-#include "Engine/Components/Transform.hpp"
-#include "Engine/Components/Physics.hpp"
+#include "Engine/Components/IComponent.hpp"
 
 class Entity
 {
 public:
     virtual ~Entity() = default;
 
-    virtual void update(float dt) = 0;
-    virtual std::string_view name() const = 0; 
+    template<typename T, typename... Args>
+    T& addComponent(Args&&... args) {
+        auto component = std::make_unique<T>(std::forward<Args>(args)...);
+        component->setOwner(this);
+        T& ref = *component;
 
-    Transform& transform() { return *_transform; }
-    Physics* physics() { return _physics.get(); }
+        _components[typeid(T)] = std::move(component);
 
-protected:
-    Entity()
-    :
-        _transform(std::make_unique<Transform>())
-    {
+        return ref;
     }
 
-    void addPhysics() {
-        _physics = std::make_unique<Physics>();
+    template<typename T>
+    T* getComponent() {
+        auto it = _components.find(typeid(T));
+        if (it != _components.end()) {
+            return static_cast<T*>(it->second.get());
+        }
+        return nullptr;
+    }
+
+    void updateComponents(float dt) {
+        for (auto& [_, components] : _components) {
+            components->update(dt);
+        }
     }
 
 private:
-    std::unique_ptr<Transform> _transform;
-    std::unique_ptr<Physics> _physics;
+    std::unordered_map<std::type_index, std::unique_ptr<IComponent>> _components;
 };

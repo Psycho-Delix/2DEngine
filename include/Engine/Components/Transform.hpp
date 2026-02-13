@@ -1,8 +1,9 @@
 #pragma once
 
+#include "IComponent.hpp"
 #include "Core/Types.hpp"
 
-struct Transform
+struct Transform : public IComponent
 {
     Vec2 position{};
     float rotation = 0;

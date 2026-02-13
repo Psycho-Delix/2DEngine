@@ -12,13 +12,12 @@ public:
     ApplicationContext() = default;
 
     void addEntity(std::unique_ptr<Entity> entity) {
-        std::cout << entity->name() << " добавлен.\nПозиция: (" << entity->transform().position.x << ", " << entity->transform().position.y << ")";
         _entities.push_back(std::move(entity));
     }
 
     void update(float dt) {
         for (auto& e : _entities) {
-            e->update(dt);
+            e->updateComponents(dt);
         }
     }
     

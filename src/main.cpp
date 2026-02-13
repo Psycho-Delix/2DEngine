@@ -5,48 +5,58 @@
 #include "Engine/Entity.hpp"
 #include "Core/ApplicationContext.hpp"
 #include "Core/Constants.hpp"
+#include "Engine/Components/Transform.hpp"
+#include "Engine/Components/Physics.hpp"
 
 /*
  * test
  */
-class Card : public Entity
+class CardComponent : public IComponent
 {
 public:
-    Card(std::string_view rank, std::string_view suit) 
+    CardComponent(std::string_view rank, std::string_view suit) 
     : 
         _rank(rank), 
         _suit(suit)
     {
-        addPhysics();
-        physics()->velocity = {2, 0};
     }
 
     void update(float dt) override {
-        if (physics()) {
-            physics()->update(dt, transform().position);
+        auto* transform = owner->getComponent<Transform>();
+        auto* physics = owner->getComponent<Physics>();
+
+        if (transform->position.x > 100) {
+            return;
         }
-
-        std::cout << "(" << transform().position.x << ", " << transform().position.y << ")\n";
+        else {
+            std::cout << "(" << transform->position.x << ", " << transform->position.y << ")\n";
+        }
     } 
-
-    std::string_view name() const override { return "Card"; }
 
 private:
     std::string _rank;
     std::string _suit;
 };
 
-int main() {
+class CardEntity : public Entity
+{
+public:
+    CardEntity(std::string_view rank, std::string_view suit) {
+        auto& transform = addComponent<Transform>();
+        auto& physics = addComponent<Physics>();
+        physics.velocity = {2, 0};
 
-    std::cout << "\n";
+        addComponent<CardComponent>(rank, suit);
+    }
+};
+
+int main() {
 
     std::cout << "\n";
 
     ApplicationContext context;
     
-    auto card = std::make_unique<Card>("Ace", "Spades");
-
-    card->transform().position = {50, 50};
+    auto card = std::make_unique<CardEntity>("Ace", "Spades");
 
     context.addEntity(std::move(card));
 
