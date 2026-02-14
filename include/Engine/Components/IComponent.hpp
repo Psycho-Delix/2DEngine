@@ -6,7 +6,9 @@ class IComponent
 {
 public:
     virtual ~IComponent() = default;
-    virtual void update(float dt) {};
+
+    virtual void awake() {};
+    virtual void update() {};
 
     void setOwner(Entity* entity) {
         owner = entity;

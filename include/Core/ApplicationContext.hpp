@@ -15,9 +15,9 @@ public:
         _entities.push_back(std::move(entity));
     }
 
-    void update(float dt) {
+    void update() {
         for (auto& e : _entities) {
-            e->updateComponents(dt);
+            e->updateComponents();
         }
     }
     

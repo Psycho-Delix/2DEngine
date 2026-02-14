@@ -21,6 +21,8 @@ public:
 
         _components[typeid(T)] = std::move(component);
 
+        ref.awake();
+
         return ref;
     }
 
@@ -33,9 +35,9 @@ public:
         return nullptr;
     }
 
-    void updateComponents(float dt) {
+    void updateComponents() {
         for (auto& [_, components] : _components) {
-            components->update(dt);
+            components->update();
         }
     }
 

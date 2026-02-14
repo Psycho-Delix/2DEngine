@@ -1,52 +1,77 @@
 #include <iostream>
 #include <string>
 #include <memory>
+#include <thread>
 
 #include "Engine/Entity.hpp"
 #include "Core/ApplicationContext.hpp"
 #include "Core/Constants.hpp"
 #include "Engine/Components/Transform.hpp"
 #include "Engine/Components/Physics.hpp"
+#include "Engine/Components/InputSystem.hpp"
 
 /*
  * test
+ * сравнимо с монобех классом в юнити
  */
-class CardComponent : public IComponent
+class PlayerComponent : public IComponent
 {
 public:
-    CardComponent(std::string_view rank, std::string_view suit) 
-    : 
-        _rank(rank), 
-        _suit(suit)
+    PlayerComponent(float speed) 
+    :
+        _speed(speed)
     {
     }
 
-    void update(float dt) override {
-        auto* transform = owner->getComponent<Transform>();
-        auto* physics = owner->getComponent<Physics>();
+    void awake() override {
+        if (!transform) transform = owner->getComponent<Transform>();
+        if (!input) input = owner->getComponent<InputSystem>();
+    }
 
-        if (transform->position.x > 100) {
-            return;
-        }
-        else {
-            std::cout << "(" << transform->position.x << ", " << transform->position.y << ")\n";
-        }
+    void update() override {
+        move();
     } 
 
+    void move() {
+        if (!transform || !input) {
+            return;
+        }
+        
+        if (input->up) {
+            transform->position.y += _speed * DELTA_TIME;
+        }
+        if (input->down) {
+            transform->position.y -= _speed * DELTA_TIME;
+        }
+        if (input->left) {
+            transform->position.x -= _speed * DELTA_TIME;
+        }
+        if (input->right) {
+            transform->position.x += _speed * DELTA_TIME;
+        }
+
+        std::cout << "(" << transform->position.x << ", " << transform->position.y << ")\n";
+    }
+
 private:
-    std::string _rank;
-    std::string _suit;
+    float _speed;
+
+    Transform* transform = nullptr;
+    InputSystem* input = nullptr;
 };
 
-class CardEntity : public Entity
+/*
+ * добавление компанентов к объекту, 
+ * так сказать имитация добавления компонента в юнити через инспектор
+ */
+class PlayerEntity : public Entity
 {
 public:
-    CardEntity(std::string_view rank, std::string_view suit) {
+    PlayerEntity(float speed) {
         auto& transform = addComponent<Transform>();
-        auto& physics = addComponent<Physics>();
-        physics.velocity = {2, 0};
+        auto& input = addComponent<InputSystem>();
 
-        addComponent<CardComponent>(rank, suit);
+        addComponent<PlayerComponent>(speed);
     }
 };
 
@@ -56,12 +81,13 @@ int main() {
 
     ApplicationContext context;
     
-    auto card = std::make_unique<CardEntity>("Ace", "Spades");
+    auto player = std::make_unique<PlayerEntity>(50.0);
 
-    context.addEntity(std::move(card));
+    context.addEntity(std::move(player));
 
     while (true) {
-        context.update(DELTA_TIME);
+        context.update();
+        std::this_thread::sleep_for(std::chrono::milliseconds(16));
     }
 
     return 0;
